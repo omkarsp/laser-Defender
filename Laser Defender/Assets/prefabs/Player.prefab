@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212929807168104506}
   - component: {fileID: 114807131760757862}
   - component: {fileID: 60848846307660046}
+  - component: {fileID: 50551207559798906}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -42,6 +43,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50551207559798906
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1979055497424018}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0.1
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!60 &60848846307660046
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -94,10 +115,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d942783e399ea647b278f2f176fd9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
+  moveSpeed: 10
   xPadding: 0.5
   yBottomPadding: 0.5
-  yTopPadding: 12
+  yTopPadding: 0.5
   health: 500
   laserPrefab: {fileID: 1474318343944616, guid: 5427d33f83c01664eb5dac7afd4b0754,
     type: 2}

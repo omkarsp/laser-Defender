@@ -7,10 +7,12 @@ using UnityEngine.SceneManagement;
 public class player : MonoBehaviour {
 
     [Header("Player")]
-    [SerializeField] float moveSpeed = 10f;
+    /*
+    [SerializeField] float moveSpeed = 100f;
     [SerializeField] float xPadding = 0.5f;
     [SerializeField] float yBottomPadding = 0.5f;
     [SerializeField] float yTopPadding = 5f;
+    */
     [SerializeField] int health = 200;
 
     [Header("Projectile")]
@@ -29,19 +31,23 @@ public class player : MonoBehaviour {
     float xMax;
     float yMin;
     float yMax;
-    
 
-	// Use this for initialization
-	void Start ()
+
+    // Use this for initialization
+   
+    void Start ()
     {
-        SetUpMoveBoundaries();
-	}
+        //SetUpMoveBoundaries();
+        NewFire();
+    }
+    
 	
 	// Update is called once per frame
 	void Update ()
     {
-        Move();
-        Fire();
+        //Fire();
+        MovePlayer();
+        //Move();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -73,6 +79,7 @@ public class player : MonoBehaviour {
         FindObjectOfType<Level>().LoadGameOver();
     }
 
+    /*
     private void Fire()
     {
         if(Input.GetButtonDown("Fire1"))
@@ -83,6 +90,13 @@ public class player : MonoBehaviour {
         {
             StopCoroutine(firingCoroutine);
         }
+    }
+    */
+
+
+    private void NewFire()
+    {
+        StartCoroutine(FireContinuously());
     }
 
     IEnumerator FireContinuously()
@@ -96,6 +110,7 @@ public class player : MonoBehaviour {
         }
     }
 
+    /*
     private void Move()
     {
         var deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
@@ -106,7 +121,20 @@ public class player : MonoBehaviour {
 
         transform.position = new Vector2(newXPos ,newYPos);
     }
+    */
 
+    public void MovePlayer()
+    {
+        if(Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+            touchPosition.z = 0f;
+            transform.position = touchPosition;
+        }
+    }
+
+    /*
     private void SetUpMoveBoundaries()
     {
         Camera gameCamera = Camera.main;
@@ -115,4 +143,5 @@ public class player : MonoBehaviour {
         yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + yBottomPadding;
         yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - yTopPadding;
     }
+    */
 }
