@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "337044583746",
+    "firebase_url": "https://space-shooter-classic.firebaseio.com",
+    "project_id": "space-shooter-classic",
+    "storage_bucket": "space-shooter-classic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337044583746:android:5c08b1537a68e064",
+        "android_client_info": {
+          "package_name": "com.OmkarPoshatwar.SpaceShooterClassic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "337044583746-vi3tlb7371cu9b3mab5nteeb3rncbnjg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxpAG2ipekm4kFI7SlCj_vDE6ssH72AsY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
